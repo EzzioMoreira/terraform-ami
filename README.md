@@ -1,6 +1,6 @@
 # Terraform AWS/AMI
 
-### This module create AMI EC2
+### This Terrafile create AMI EC2
 
 ##### Requirements
 
