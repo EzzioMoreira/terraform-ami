@@ -10,7 +10,7 @@
 - Create a terrafile.tf file in the root project, you have this example:
 ```terraform
 provider "aws" {
-  region  = "us-east-1"
+  region  = "us-east-2s"
   version = "~> 3.0"
 }
 

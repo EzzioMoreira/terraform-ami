@@ -11,16 +11,18 @@ terraform {
   }
 }
 
-data "aws_ebs_snapshot" "Metal.Corp" {
+data "aws_ebs_snapshot" "awsami" {
   most_recent = true
 
   filter {
     name   = "tag:Name"
-    values = ["SRV-01"]
+    values = [var.tagname]
+
+    owner  = [009082827909]
   }
 }
 
-resource "aws_ami" "Metal.corp" {
+resource "aws_ami" "awsami" {
   name                = "SRV-01"
   virtualization_type = "hvm"
   root_device_name    = "/dev/xvda"
