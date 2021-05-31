@@ -1,12 +1,33 @@
-# Terraform AWS/AMI
-
-### This Terrafile create AMI EC2
+# Terraform Module
+- Get last snapshot and create AMI EC2.
 
 ##### Requirements
-
+- Terraform >=0.13
 - Docker 
 - Make
 
+##### Use this module.
+- Create a terrafile.tf file in the root project, you have this example:
+```
+provider "aws" {
+  region  = "us-east-1"
+  version = "~> 3.0"
+}
+
+terraform {
+  backend "s3" {
+    # Remember to change the bucket name.
+    bucket = "terraform-ezzio"
+    key    = "ami.tfstate"
+    region = "us-east-2"
+  }
+}
+
+module "awsami" {
+    source = 
+    name = "awsami"
+}
+```
 ##### For help, type it.
 - make help
 ```make
