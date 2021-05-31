@@ -8,7 +8,7 @@
 
 ##### Use this module.
 - Create a terrafile.tf file in the root project, you have this example:
-```
+```terraform
 provider "aws" {
   region  = "us-east-1"
   version = "~> 3.0"
